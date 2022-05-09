@@ -1,0 +1,10 @@
+# auto-generated
+[Libraries]
+work.files = [
+	'Blink.vhd'
+]
+[libraries.work]
+files = [
+	'Blink.vhd'
+]
+# auto-generated-end

@@ -1,0 +1,12 @@
+﻿<Project>
+  <ItemGroup>
+    <File Include="Blink.vhd" />
+    <File Include="Blink_Sim.ghdp" />
+    <File Include="Blink_Sim1.ghdp" />
+  </ItemGroup>
+  <PropertyGroup>
+    <HardwareStartPath>Blink.vhd</HardwareStartPath>
+    <SelectedFpga>CYC1000</SelectedFpga>
+    <IoVoltage>3.3V</IoVoltage>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,49 @@
+Component Blink_tb()
+{
+    SIGNAL finished : STD_LOGIC:= '0';
+    CONSTANT period_time : TIME := 83333 ps;
+
+    Process Sim_finished()
+    {
+        wait for 10000 us;
+        finished <= '1';
+        wait;
+    }
+
+    NewComponent Blink
+    (
+        CLK => CLK,
+        LED0 => LED0,
+        LED1 => LED1,
+        LED2 => LED2,
+        LED3 => LED3,
+        LED4 => LED4,
+        LED5 => LED5,
+        LED6 => LED6,
+        LED7 => LED7,
+    );
+
+    SIGNAL CLK : std_logic ;
+    SIGNAL LED0 : std_logic  := '0';
+    SIGNAL LED1 : std_logic  := '0';
+    SIGNAL LED2 : std_logic  := '0';
+    SIGNAL LED3 : std_logic  := '0';
+    SIGNAL LED4 : std_logic  := '0';
+    SIGNAL LED5 : std_logic  := '0';
+    SIGNAL LED6 : std_logic  := '0';
+    SIGNAL LED7 : std_logic  := '0';
+
+
+    Process Sim_CLK()
+    {
+        While(finished /= '1')
+        {
+            CLK <= '1';
+            wait for 10 us;
+            CLK <= '0';
+            wait for 10 us;
+            
+        }
+        wait;
+    }
+}
